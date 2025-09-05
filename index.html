@@ -1,99 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechStore - Landing Page</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Classic Stopwatch with Auto-Stop & Dynamic BG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1>Classic Stopwatch ⏱️</h1>
 
-  <!-- Navigation Bar -->
-  <nav id="navbar">
-    <div class="logo">TechStore</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#deals">Deals</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div id="display">00:00:00.00</div>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Upgrade Your Tech Life</h1>
-      <p>Latest gadgets, unbeatable prices.</p>
-      <a href="#products" class="btn">Shop Now</a>
+    <div class="input-group">
+      <label for="limitTime">Set Auto-Stop Limit (seconds):</label>
+      <input id="limitTime" type="number" min="1" placeholder="e.g. 60" />
     </div>
-  </section>
 
-  <!-- Products Section -->
-  <section id="products" class="products">
-    <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="Laptop">
-        <h3>Ultra Laptop</h3>
-        <p>$999</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smartphone">
-        <h3>Smartphone Pro</h3>
-        <p>$699</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://images.pexels.com/photos/3394656/pexels-photo-3394656.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Headphones">
-        <h3>Noise-Cancel Headphones</h3>
-        <p>$199</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Smartwatch">
-        <h3>Smartwatch X</h3>
-        <p>$299</p>
-        <button>Add to Cart</button>
-      </div>
+    <div class="buttons">
+      <button id="startBtn">Start</button>
+      <button id="stopBtn" disabled>Stop</button>
+      <button id="resetBtn" disabled>Reset</button>
+      <button id="lapBtn" disabled>Lap</button>
     </div>
-  </section>
 
-  <!-- Deals Section -->
-  <section id="deals" class="deals">
-    <div class="deal-banner">
-      <h2>🔥 Mega Sale is Live 🔥</h2>
-      <p>Get up to <strong>50% OFF</strong> on selected gadgets!</p>
-      <a href="#products" class="btn">Grab Deals</a>
-    </div>
-  </section>
+    <ul id="laps"></ul>
+  </div>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>Why Shop With Us?</h2>
-    <p>TechStore is your one-stop shop for the latest gadgets, fast delivery, and best deals. We believe in quality, affordability, and customer satisfaction.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@techstore.com</p>
-    <p>Phone: +91 98765 00000</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 TechStore. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Change nav background on scroll
-    window.addEventListener("scroll", function() {
-      const nav = document.getElementById("navbar");
-      nav.classList.toggle("scrolled", window.scrollY > 50);
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
